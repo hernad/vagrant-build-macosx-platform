@@ -1,0 +1,11 @@
+
+build harbour:
+
+ vagrant_harbour.sh
+
+
+build F18 (1.7)
+
+ vagrant_F18.sh 
+
+
