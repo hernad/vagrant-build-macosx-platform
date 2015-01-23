@@ -17,13 +17,8 @@ export HB_INSTALL_PREFIX=$HB_ROOT
 export PATH=HB_QTPATH:$PATH:$HB_ROOT/bin
 
 cd $HOME_BUILD
-git clone http://github.com/knowhow/F18_knowhow.git
-#cd F18_knowhow
-#git checkout -f master
-#git clean -d -fx
-#git pull
-
-
+# git clone https://github.com/knowhow/F18_knowhow.git
+cd F18_knowhow
 git checkout -f 1.7
 git clean -d -fx
 git pull
@@ -31,7 +26,8 @@ source scripts/mac_set_envars.sh
 
 ./build_release.sh
 
-cp /vagrant/hernad_ssh.key $HOME
+sudo cp /vagrant/hernad_ssh.key $HOME_BUILD
+sudo chown vagrant $HOME_BUILD/*.key
 chmod 0700 $HOME/*.key
 
 scripts/build_gz.sh XX --push
