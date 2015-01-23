@@ -7,20 +7,19 @@ Vagrant.configure(2) do |config|
     #vb.memory = "2048"
   end
 
-  config.vm.provision "shell", inline: <<-SHELL
+  config.vm.provision "shell", privileged: false, inline: <<-SHELL
 
-     sudo chown root /usr/local/bin/brew
-     sudo chown root:admin /usr/local/bin/brew
+     #sudo chown root /usr/local/bin/brew
+     #sudo chown root:admin /usr/local/bin/brew
+     #brew install qt5
 
      #brew install caskroom/cask/brew-cask
-     brew install Caskroom/cask/xquartz
-     #brew install qt5
-     cd /vagrant
-     bash get_hb.sh
-     bash build_harbour.sh
-     bash put_build_to_ftp_server.sh
 
-     bash build_F18.sh
+     brew install Caskroom/cask/xquartz
+     cd /vagrant
+     bash get_hb_deps.sh
+     bash build_harbour.sh
+     bash put_hb_to_ftp_server.sh
 
   SHELL
 end

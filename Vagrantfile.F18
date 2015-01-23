@@ -1,0 +1,17 @@
+# -*- mode: ruby -*-
+Vagrant.configure(2) do |config|
+  config.vm.box = "maverick-osx"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = true
+    #vb.memory = "2048"
+  end
+
+  config.vm.provision "shell", privileged: false, inline: <<-SHELL
+
+     cd /vagrant
+     bash get_f18_deps.sh
+     bash build_F18_1.7.sh
+
+  SHELL
+end

@@ -19,8 +19,14 @@ export PATH=HB_QTPATH:$PATH:$HB_ROOT/bin
 cd $HOME_BUILD
 git clone http://github.com/knowhow/F18_knowhow.git
 cd F18_knowhow
-git checkout master
+git checkout -f master
+git clean -d -fx
+git pull
 
-source scripts/mac_ubuntu_set_envars.sh
-git checkout 1.7
+source scripts/mac_set_envars.sh
+
+git checkout -f 1.7
+git clean -d -fx
+git pull
+
 ./build.sh
