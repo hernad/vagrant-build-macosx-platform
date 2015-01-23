@@ -6,7 +6,7 @@ RUNNING=`vagrant status | grep -c " running "`
 
 echo $RUNNING
 
-if [ "$RUNNING" == "$1" ] ; then 
+if [ "$RUNNING" == "1" ] ; then 
   vagrant provision
 else
   vagrant up --provision
