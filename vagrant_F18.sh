@@ -8,6 +8,6 @@ echo $RUNNING
 
 if [ "$RUNNING" == "$1" ] ; then 
   vagrant provision
-fi
+else
   vagrant up --provision
-endif
+fi
