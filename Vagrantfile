@@ -9,21 +9,21 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
 
-     #sudo chown root /usr/local/bin/brew
-     #sudo chown root:admin /usr/local/bin/brew
+     sudo chown root /usr/local/bin/brew
+     sudo chown root:admin /usr/local/bin/brew
 
      #brew install caskroom/cask/brew-cask
-     #brew install Caskroom/cask/xquartz
+     brew install Caskroom/cask/xquartz
      #brew install qt5
      cd /vagrant
      bash get_hb.sh
      bash build_harbour.sh
 
-     #git clone http://github.com/knowhow/F18_knowhow.git
-     #git checkout master
-     #source scripts/mac_ubuntu_set_envars.sh
-     #git checkout 1.7
-     #./build_relase.sh
+     git clone http://github.com/knowhow/F18_knowhow.git
+     git checkout master
+     source scripts/mac_ubuntu_set_envars.sh
+     git checkout -f 1.7
+     ./build_relase.sh
 
   SHELL
 end
