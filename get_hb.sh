@@ -18,6 +18,7 @@ fi
 
 FTP_PATH=`cat ftp_server_path.config`
 FTP_PWD=`cat ftp_user_password.config`
+
 function get_file() { 
 
  FILE=$1
@@ -30,6 +31,7 @@ function get_file() {
 HOME_BUILD=/Users/vagrant
 HOME_PLATFORM=$HOME_BUILD/Platform
 
+mkdir -p $HOME_BUILD/hb
 cd $HOME_BUILD/hb
 FILE=harbour_core.tar.gz
 get_file $FILE
@@ -44,5 +46,5 @@ cd PSQL
 FILE=PSQL_Platform_macosx.zip
 get_file $FILE
 echo raspakujem $FILE
-unzip $FILE
+unzip -o $FILE
 

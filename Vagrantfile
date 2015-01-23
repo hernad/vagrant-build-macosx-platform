@@ -8,10 +8,16 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
+
+     #sudo chown root /usr/local/bin/brew
+     #sudo chown root:admin /usr/local/bin/brew
+
      #brew install caskroom/cask/brew-cask
-     brew install Caskroom/cask/xquartz
+     #brew install Caskroom/cask/xquartz
      #brew install qt5
-     ./get_hb.sh
+     cd /vagrant
+     bash get_hb.sh
+     bash build_harbour.sh
 
      #git clone http://github.com/knowhow/F18_knowhow.git
      #git checkout master
