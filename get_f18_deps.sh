@@ -23,7 +23,7 @@ function get_file() {
 
  FILE=$1
 
- RUN_PARAMS="-L -o $FILE $FTP_PATH/$FILE  --user $FTP_PWD"
+ RUN_PARAMS="-s -L -o $FILE $FTP_PATH/$FILE  --user $FTP_PWD"
  echo curl run params: $RUN_PARAMS
  curl $RUN_PARAMS
 }

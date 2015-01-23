@@ -23,7 +23,7 @@ function put_file() {
 
  FILE=$1
 
- RUN_PARAMS="-T $FILE $FTP_PATH/  --user $FTP_PWD"
+ RUN_PARAMS="-s -T $FILE $FTP_PATH/  --user $FTP_PWD"
  echo curl run params: $RUN_PARAMS
  curl $RUN_PARAMS
 }
