@@ -18,13 +18,9 @@ Vagrant.configure(2) do |config|
      cd /vagrant
      bash get_hb.sh
      bash build_harbour.sh
+     bash put_build_to_ftp_server.sh
 
-     git clone http://github.com/knowhow/F18_knowhow.git
      bash build_F18.sh
-     git checkout master
-     source scripts/mac_ubuntu_set_envars.sh
-     git checkout -f 1.7
-     ./build_relase.sh
 
   SHELL
 end
