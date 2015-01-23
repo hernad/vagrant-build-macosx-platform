@@ -20,6 +20,7 @@ Vagrant.configure(2) do |config|
      bash build_harbour.sh
 
      git clone http://github.com/knowhow/F18_knowhow.git
+     bash build_F18.sh
      git checkout master
      source scripts/mac_ubuntu_set_envars.sh
      git checkout -f 1.7
