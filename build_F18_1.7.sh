@@ -18,15 +18,20 @@ export PATH=HB_QTPATH:$PATH:$HB_ROOT/bin
 
 cd $HOME_BUILD
 git clone http://github.com/knowhow/F18_knowhow.git
-cd F18_knowhow
-git checkout -f master
-git clean -d -fx
-git pull
+#cd F18_knowhow
+#git checkout -f master
+#git clean -d -fx
+#git pull
 
-source scripts/mac_set_envars.sh
 
 git checkout -f 1.7
 git clean -d -fx
 git pull
+source scripts/mac_set_envars.sh
 
-./build.sh
+./build_release.sh
+
+cp /vagrant/hernad_ssh.key $HOME
+chmod 0700 $HOME/*.key
+
+scripts/build_gz.sh XX --push
